@@ -13,7 +13,7 @@ import pe.edu.upeu.sisventas_wannacry.service.RolService;
 @SpringBootTest
 class SisventasWannacryApplicationTests {
 	@Autowired
-	private PersonaDao personaDao;
+	private RolDao rolDao;
 	@Test
 	void contextLoads() {
 		/*
@@ -21,11 +21,9 @@ class SisventasWannacryApplicationTests {
 		r.setNomrol("Administrador");
 		System.out.println(rolDao.create(r));
 		*/
-		Persona p = new Persona();
-		p.setNombres("Julio");
-		p.setApellidos("Davila Cerron");
-		p.setDni("12345678");
-		System.out.println(personaDao.create(p));
+		Rol r=new Rol();
+		System.out.println(rolDao.delete(2));
+		/*System.out.println(rolDao.read(1).getNomrol());*/
 	}
 
 }
