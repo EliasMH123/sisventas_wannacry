@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -32,7 +33,7 @@ public class PersonaDaoImpl implements PersonaDao{
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		String SQL = "delete persona where idpersona=?";
+		String SQL = "delete from persona where idpersona=?";
 		return jdbcTemplate.update(SQL, id);
 	}
 
@@ -40,7 +41,7 @@ public class PersonaDaoImpl implements PersonaDao{
 	public Persona read(int id) {
 		// TODO Auto-generated method stub
 		String SQL = "select *from persona where idpersona=?";
-		return jdbcTemplate.queryForObject(SQL, Persona.class);
+		return jdbcTemplate.queryForObject(SQL,new Object[] {id},new BeanPropertyRowMapper<Persona>(Persona.class));
 	}
 
 	@Override
