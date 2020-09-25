@@ -18,7 +18,7 @@ public class PersonaDaoImpl implements PersonaDao{
 	@Override
 	public int create(Persona p) {
 		// TODO Auto-generated method stub
-		String SQL = "insert into persona(nombres,apellidos,dni)values(?)";
+		String SQL = "insert into persona(nombres,apellidos,dni)values(?,?,?)";
 		return jdbcTemplate.update(SQL, p.getNombres(),p.getApellidos(),p.getDni());
 		
 	}
@@ -26,7 +26,7 @@ public class PersonaDaoImpl implements PersonaDao{
 	@Override
 	public int update(Persona p) {
 		// TODO Auto-generated method stub
-		String SQL = "update rol set nombres=? apellidos=? dni=? where idpersona=?";
+		String SQL = "update persona set nombres=?, apellidos=?, dni=? where idpersona=?";
 		return jdbcTemplate.update(SQL, p.getNombres(),p.getApellidos(),p.getDni(),p.getIdpersona());
 	}
 

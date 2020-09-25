@@ -44,6 +44,8 @@ public class PersonaController {
 	public int update(@RequestBody Persona persona,@PathVariable int id) {
 		Persona p=personaService.read(id);
 		p.setNombres(persona.getNombres());
+		p.setApellidos(persona.getApellidos());
+		p.setDni(persona.getDni());
 		return personaService.update(p);
 	}
 }
