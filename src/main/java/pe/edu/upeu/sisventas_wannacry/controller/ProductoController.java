@@ -10,33 +10,35 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pe.edu.upeu.sisventas_wannacry.entity.Rol;
-import pe.edu.upeu.sisventas_wannacry.service.RolService;
+import pe.edu.upeu.sisventas_wannacry.entity.Producto;
+import pe.edu.upeu.sisventas_wannacry.service.ProductoService;
 @RestController
-@RequestMapping("/roles")
-public class RolController {
+@RequestMapping("/productos")
+public class ProductoController{
 	@Autowired
-	private RolService rolService;
+	private ProductoService productoService;
 	@GetMapping("/lista")
 	public List<Map<String,Object>>listar(){
-		return rolService.readAll();	
+	return productoService.readAll();
 	}
 	@GetMapping("/{id}")
-	public Rol read(@PathVariable int id){
-		return rolService.read(id);
+	public Producto read(@PathVariable int id){
+		return productoService.read(id);
 	}
 	@DeleteMapping("/delete/{id}")
 	public int delete(@PathVariable int id){
-		return rolService.delete(id);
+		return productoService.delete(id);
 	}
-	@PostMapping("/rol")
-	public int create(@RequestBody Rol rol){
-		return rolService.create(rol);
+	@PostMapping("/producto")
+	public int create(@RequestBody Producto producto){
+		return productoService.create(producto);
 	}
 	@PutMapping("edit/{id}")
-	public int update(@RequestBody Rol rol,@PathVariable int id) {
-		Rol r=rolService.read(id);
-		r.setNomrol(rol.getNomrol());
-		return rolService.update(r);
+	public int update(@RequestBody Producto producto,@PathVariable int id){
+		Producto p=productoService.read(id);
+		p.setNomprod(producto.getNomprod());
+		p.setPrecio(producto.getPrecio());
+		p.setCantidad(producto.getCantidad());
+		return productoService.update(p);
 	}
 }

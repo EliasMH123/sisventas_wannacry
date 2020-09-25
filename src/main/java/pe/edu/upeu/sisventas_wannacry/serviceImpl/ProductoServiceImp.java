@@ -3,36 +3,36 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upeu.sisventas_wannacry.dao.RolDao;
-import pe.edu.upeu.sisventas_wannacry.entity.Rol;
-import pe.edu.upeu.sisventas_wannacry.service.RolService;
+import pe.edu.upeu.sisventas_wannacry.dao.ProductoDao;
+import pe.edu.upeu.sisventas_wannacry.entity.Producto;
+import pe.edu.upeu.sisventas_wannacry.service.ProductoService;
 @Service
-public class RolServiceImpl implements RolService{
+public class ProductoServiceImp implements ProductoService{
 	@Autowired
-	private RolDao rolDao;
+	private ProductoDao productoDao;
 	@Override
-	public int create(Rol r){
+	public int create(Producto p){
 		// TODO Auto-generated method stub
-		return rolDao.create(r);
+		return productoDao.create(p);
 	}
 	@Override
-	public int update(Rol r){
+	public int update(Producto p){
 		// TODO Auto-generated method stub
-		return rolDao.update(r);
+		return productoDao.update(p);
 	}
 	@Override
 	public int delete(int id){
 		// TODO Auto-generated method stub
-		return rolDao.delete(id);
+		return productoDao.delete(id);
 	}
 	@Override
-	public Rol read(int id){
+	public Producto read(int id){
 		// TODO Auto-generated method stub
-		return rolDao.read(id);
+		return productoDao.read(id);
 	}
 	@Override
 	public List<Map<String,Object>>readAll(){
 		// TODO Auto-generated method stub
-		return rolDao.readAll();
+		return productoDao.readAll();
 	}
 }

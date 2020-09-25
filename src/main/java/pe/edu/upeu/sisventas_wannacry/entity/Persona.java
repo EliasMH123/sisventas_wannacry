@@ -1,45 +1,39 @@
 package pe.edu.upeu.sisventas_wannacry.entity;
-
-public class Persona {
-	
+public class Persona{
 	private int idpersona;
 	private String nombres;
 	private String apellidos;
 	private String dni;
-	public Persona() {
-
+	public Persona(){
 	}
-	public Persona(int idpersona, String nombres, String apellidos, String dni) {
-		super();
-		this.idpersona = idpersona;
-		this.nombres = nombres;
-		this.apellidos = apellidos;
-		this.dni = dni;
+	public Persona(int idpersona,String nombres,String apellidos,String dni){
+		this.idpersona=idpersona;
+		this.nombres=nombres;
+		this.apellidos=apellidos;
+		this.dni=dni;
 	}
-	public int getIdpersona() {
+	public int getIdpersona(){
 		return idpersona;
 	}
-	public void setIdpersona(int idpersona) {
-		this.idpersona = idpersona;
+	public void setIdpersona(int idpersona){
+		this.idpersona=idpersona;
 	}
-	public String getNombres() {
+	public String getNombres(){
 		return nombres;
 	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombres(String nombres){
+		this.nombres=nombres;
 	}
-	public String getApellidos() {
+	public String getApellidos(){
 		return apellidos;
 	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setApellidos(String apellidos){
+		this.apellidos=apellidos;
 	}
-	public String getDni() {
+	public String getDni(){
 		return dni;
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
-	}
-	
-	
+	public void setDni(String dni){
+		this.dni=dni;
+	}	
 }
