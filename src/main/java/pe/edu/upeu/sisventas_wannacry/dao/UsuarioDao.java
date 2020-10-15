@@ -12,4 +12,6 @@ public interface UsuarioDao {
 	int delete(int id);
 	Usuario read(int id);
 	List<Map<String,Object>> readAll();
+	
+	public Usuario read(String nomuser);
 }

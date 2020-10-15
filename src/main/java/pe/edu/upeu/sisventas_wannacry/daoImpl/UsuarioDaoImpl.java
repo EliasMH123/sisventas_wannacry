@@ -50,4 +50,8 @@ public List<Map<String, Object>> readAll() {
 	String SQL = "select *from usuario";
 	return jdbcTemplate.queryForList(SQL);
 }
+public Usuario read(String nomuser) {
+	String SQL = "select *from usuario Where nomuser=?";
+	return jdbcTemplate.queryForObject(SQL, new Object[] {nomuser}, new BeanPropertyRowMapper<Usuario>(Usuario.class));
+}
 }
